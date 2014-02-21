@@ -10,10 +10,17 @@ module.exports = function (grunt) {
                     }
                 ]
             }
+        },
+        watch: {
+            svg : {
+                files: ['svg/*.svg'],
+                tasks: ['svg2png']
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-svg2png');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['svg2png']);
 
